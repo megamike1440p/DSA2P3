@@ -2,6 +2,8 @@
 #define NEXTFIT_H
 
 #include <vector>
+#include <iostream>
+#include <iomanip>
 
 class NextFit {
 public:
