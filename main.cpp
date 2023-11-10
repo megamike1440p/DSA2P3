@@ -22,7 +22,7 @@ int main() {
 
     // Execute algorithms using the unsorted list for online algorithms
     std::cout << "Brute force fit bin order: " << std::endl;
-    int bruteForceBins = bruteForce.packItems(sortedItems); // Assuming brute force uses sorted items
+    int bruteForceBins = bruteForce.packItems(items); // Assuming brute force uses sorted items
     std::cout << "Next fit bin order: " << std::endl;
     int onlineNextFitBins = nextFit.packItems(items);
     std::cout << "Online first fit bin order: " << std::endl;
