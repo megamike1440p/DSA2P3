@@ -2,16 +2,15 @@
 #define BRUTEFORCE_H
 
 #include <vector>
-#include <iostream>
-#include <iomanip>
+#include "Bin.h"
 
 class BruteForce {
 public:
     int packItems(std::vector<double> items);
 
 private:
-    void permute(std::vector<double>& items, int start, int& minBins);
-    int packPermutation(std::vector<double>& items);
+    void permute(std::vector<double>& items, int start, std::vector<std::vector<double>>& bestConfiguration, int& minBins);
+    int packPermutation(const std::vector<double>& items, std::vector<Bin>& bins);
 };
 
 #endif // BRUTEFORCE_H
