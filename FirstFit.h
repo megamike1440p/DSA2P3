@@ -2,6 +2,7 @@
 #define FIRSTFIT_H
 
 #include <vector>
+#include <iostream>
 
 class FirstFit {
 public:
