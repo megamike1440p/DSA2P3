@@ -21,18 +21,16 @@ int main() {
     BestFit bestFit;
 
     // Execute algorithms using the unsorted list for online algorithms
+    std::cout << "Brute force fit bin order: " << std::endl;
     int bruteForceBins = bruteForce.packItems(sortedItems); // Assuming brute force uses sorted items
+    std::cout << "Next fit bin order: " << std::endl;
+    int onlineNextFitBins = nextFit.packItems(items);
     std::cout << "Online first fit bin order: " << std::endl;
     int onlineFirstFitBins = firstFit.packItems(items);
-    std::cout << "Online next fit bin order: " << std::endl;
-    int onlineNextFitBins = nextFit.packItems(items);
     std::cout << "Online best fit bin order: " << std::endl;
     int onlineBestFitBins = bestFit.packItems(items);
-
-    // Execute algorithms using the sorted list for offline algorithms
     std::cout << "Offline first fit bin order: " << std::endl;
     int offlineFirstFitBins = firstFit.packItems(sortedItems);
-    // Before calling the Best Fit algorithm
     std::cout << "Offline best fit bin order: " << std::endl;
     int offlineBestFitBins = bestFit.packItems(sortedItems); // Correct list for offline
 
