@@ -37,8 +37,8 @@ int main() {
     // Output results
     std::cout << "Total items: " << items.size() << std::endl;
     std::cout << "Brute Force Bins: " << bruteForceBins << std::endl;
+    std::cout << "Next Fit Bins: " << onlineNextFitBins << std::endl;
     std::cout << "Online First Fit Bins: " << onlineFirstFitBins << std::endl;
-    std::cout << "Online Next Fit Bins: " << onlineNextFitBins << std::endl;
     std::cout << "Online Best Fit Bins: " << onlineBestFitBins << std::endl;
     std::cout << "Offline First Fit Bins: " << offlineFirstFitBins << std::endl;
     std::cout << "Offline Best Fit Bins: " << offlineBestFitBins << std::endl;
