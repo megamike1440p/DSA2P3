@@ -31,9 +31,6 @@ int BestFit::packItems(const std::vector<double>& items) {
             bins.push_back(newBin);
         }
 
-        // Debug output for each item placement
-        std::cout << "Item " << item << " placed in bin " 
-                  << (bestBinIndex != -1 ? bestBinIndex : bins.size() - 1) << std::endl;
         for (size_t i = 0; i < bins.size(); ++i) {
             std::cout << "Bin " << i << ": ";
             for (double binItem : bins[i].getItems()) {
