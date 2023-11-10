@@ -1,6 +1,7 @@
 #include "BestFit.h"
 #include <iostream> // For debug output
 #include <cmath>    // For std::fabs
+#include <iomanip>
 
 int BestFit::packItems(const std::vector<double>& items) {
     const double epsilon = 1e-6; // A small value for floating-point comparison
@@ -34,9 +35,9 @@ int BestFit::packItems(const std::vector<double>& items) {
         std::cout << "Item " << item << " placed in bin " 
                   << (bestBinIndex != -1 ? bestBinIndex : bins.size() - 1) << std::endl;
         for (size_t i = 0; i < bins.size(); ++i) {
-            std::cout << "Bin " << i << " (Current Size: " << bins[i].getCurrentSize() << ") contains: ";
+            std::cout << "Bin: " << i << " (Current Size: " << bins[i].getCurrentSize() << ") ";
             for (double binItem : bins[i].getItems()) {
-                std::cout << binItem << " ";
+                std::cout << std::fixed << std::setprecision(2) << binItem << " ";
             }
             std::cout << std::endl;
         }
