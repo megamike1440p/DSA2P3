@@ -20,9 +20,9 @@ int BruteForce::packItems(std::vector<double> items) {
 
     // Print the best bin configuration
 
-    for (size_t i = 0; i < bins.size(); ++i) {
+    for (size_t i = 0; i < bestConfiguration.size(); ++i) {
             std::cout << "\tBin " << i << ": ";
-            for (double binItem : bins[i].getItems()) {
+            for (double binItem : bestConfiguration[i].getItems()) {
                 std::cout << std::fixed << std::setprecision(2) << binItem << " ";
             }
             std::cout << std::endl;
