@@ -21,7 +21,7 @@ int BruteForce::packItems(std::vector<double> items) {
         }
     } while (std::next_permutation(items.begin(), items.end()));
 
-    Print the best bin configuration
+    //Print the best bin configuration
     for (size_t i = 0; i < bestConfiguration.size(); ++i) {
         std::cout << "\tBrute Force Bin " << i << ": ";
         for (double item : bestConfiguration[i]) {
