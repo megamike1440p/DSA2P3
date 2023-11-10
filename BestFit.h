@@ -2,6 +2,7 @@
 #define BESTFIT_H
 
 #include <vector>
+#include "Bin.h"
 
 class BestFit {
 public:
