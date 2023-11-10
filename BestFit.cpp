@@ -36,7 +36,7 @@ int BestFit::packItems(const std::vector<double>& items) {
         for (size_t i = 0; i < bins.size(); ++i) {
             std::cout << "Bin " << i << ": ";
             for (double binItem : bins[i].getItems()) {
-                std::cout << std::fixed << std::setprecision(2) << binItem;
+                std::cout << std::fixed << std::setprecision(2) << binItem << " ";
             }
             std::cout << std::endl;
         }
