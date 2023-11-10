@@ -24,6 +24,7 @@ int main() {
     int bruteForceBins = bruteForce.packItems(sortedItems); // Assuming brute force uses sorted items
     std::cout << "Online first fit bin order: " << std::endl;
     int onlineFirstFitBins = firstFit.packItems(items);
+    std::cout << "Online next fit bin order: " << std::endl;
     int onlineNextFitBins = nextFit.packItems(items);
     std::cout << "Online best fit bin order: " << std::endl;
     int onlineBestFitBins = bestFit.packItems(items);
