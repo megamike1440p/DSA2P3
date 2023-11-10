@@ -16,7 +16,7 @@ int BestFit::packItems(const std::vector<double>& items) {
         // Find the bin that will have the least space left after placing the item
         for (size_t i = 0; i < bins.size(); ++i) {
             double spaceLeft = 1.0 - bins[i].getCurrentSize();
-            if (item <= spaceLeft && spaceLeft < minSpaceLeft) {
+            if (item <= spaceLeft && spaceLeft <= minSpaceLeft) {
                 minSpaceLeft = spaceLeft;
                 bestBinIndex = i;
             }
