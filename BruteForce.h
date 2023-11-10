@@ -5,6 +5,7 @@
 #include "Bin.h"
 #include <iostream>
 #include <iomanip>
+#include <algorithm>
 
 class BruteForce {
 public:
