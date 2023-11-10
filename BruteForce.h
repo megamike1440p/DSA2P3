@@ -2,6 +2,8 @@
 #define BRUTEFORCE_H
 
 #include <vector>
+#include <iostream>
+#include <iomanip>
 
 class BruteForce {
 public:
