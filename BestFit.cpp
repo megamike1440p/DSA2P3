@@ -14,6 +14,14 @@ int BestFit::packItems(const std::vector<double>& items) {
             if (item <= spaceLeft && spaceLeft < minSpaceLeft) {
                 minSpaceLeft = spaceLeft;
                 bestBinIndex = i;
+                    // Debug output for each item placement
+    std::cout << "Item " << item << " placed in bin " << (bestBinIndex != -1 ? bestBinIndex : bins.size() - 1) << std::endl;
+    for (size_t i = 0; i < bins.size(); ++i) {
+        std::cout << "Bin " << i << " contains: ";
+        for (double binItem : bins[i].getItems()) {
+            std::cout << binItem << " ";
+        }
+        std::cout << std::endl;
             }
         }
 
