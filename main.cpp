@@ -17,7 +17,7 @@ int main() {
     // Print out the sorted items
     std::cout << "Sorted items: ";
     for (double item : sortedItems) {
-        std::cout << std::fixed << std::setprecision(2) << item << " ";
+        std::cout << item << " ";
     }
     std::cout << std::endl;
 
