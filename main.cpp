@@ -35,6 +35,12 @@ int main() {
 
     // Execute algorithms using the sorted list for offline algorithms
     int offlineFirstFitBins = firstFit.packItems(sortedItems);
+    // Before calling the Best Fit algorithm
+std::cout << "Items being passed to Offline Best Fit: ";
+for (const auto& item : sortedItems) {
+    std::cout << item << " ";
+}
+std::cout << std::endl;
     int offlineBestFitBins = bestFit.packItems(sortedItems); // Correct list for offline
 
     // Output results
