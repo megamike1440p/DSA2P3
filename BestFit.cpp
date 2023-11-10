@@ -1,7 +1,9 @@
 #include "BestFit.h"
 #include <iostream> // For debug output
+#include <cmath>    // For std::fabs
 
 int BestFit::packItems(const std::vector<double>& items) {
+    const double epsilon = 1e-6; // A small value for floating-point comparison
     std::vector<Bin> bins;
 
     for (double item : items) {
@@ -10,22 +12,19 @@ int BestFit::packItems(const std::vector<double>& items) {
 
         for (size_t i = 0; i < bins.size(); ++i) {
             double spaceLeft = 1.0 - bins[i].getCurrentSize();
-            // Check for an exact fit
-            if (item == spaceLeft) {
+            // Use epsilon to check for "close enough" equality
+            if (std::fabs(spaceLeft - item) < epsilon) {
                 bestBinIndex = i;
-                break; // Found the perfect fit, no need to look further
-            }
-            else if (item < spaceLeft && spaceLeft - item < minSpaceLeft) {
+                break; // Exact fit found, break early
+            } else if (item < spaceLeft && spaceLeft - item < minSpaceLeft) {
                 minSpaceLeft = spaceLeft - item;
                 bestBinIndex = i;
             }
         }
 
-        // If a suitable bin is found, place the item there
         if (bestBinIndex != -1) {
             bins[bestBinIndex].addItem(item);
         } else {
-            // Otherwise, create a new bin for the item
             Bin newBin;
             newBin.addItem(item);
             bins.push_back(newBin);
@@ -35,7 +34,7 @@ int BestFit::packItems(const std::vector<double>& items) {
         std::cout << "Item " << item << " placed in bin " 
                   << (bestBinIndex != -1 ? bestBinIndex : bins.size() - 1) << std::endl;
         for (size_t i = 0; i < bins.size(); ++i) {
-            std::cout << "Bin " << i << " contains: ";
+            std::cout << "Bin " << i << " (Current Size: " << bins[i].getCurrentSize() << ") contains: ";
             for (double binItem : bins[i].getItems()) {
                 std::cout << binItem << " ";
             }
