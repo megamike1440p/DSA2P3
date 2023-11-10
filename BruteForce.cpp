@@ -21,14 +21,14 @@ int BruteForce::packItems(std::vector<double> items) {
         }
     } while (std::next_permutation(items.begin(), items.end()));
 
-    // Print the best bin configuration
-    // for (size_t i = 0; i < bestConfiguration.size(); ++i) {
-    //     std::cout << "\tBrute Force Bin " << i << ": ";
-    //     for (double item : bestConfiguration[i]) {
-    //         std::cout << std::fixed << std::setprecision(2) << item << " ";
-    //     }
-    //     std::cout << std::endl;
-    // }
+    Print the best bin configuration
+    for (size_t i = 0; i < bestConfiguration.size(); ++i) {
+        std::cout << "\tBrute Force Bin " << i << ": ";
+        for (double item : bestConfiguration[i]) {
+            std::cout << std::fixed << std::setprecision(2) << item << " ";
+        }
+        std::cout << std::endl;
+    }
 
     return minBins;
 }
@@ -48,13 +48,13 @@ int BruteForce::packPermutation(const std::vector<double>& items, std::vector<Bi
             bins.push_back(newBin);
         }
     }
-for (size_t i = 0; i < bins.size(); ++i) {
-            std::cout << "\tBin " << i << ": ";
-            for (double binItem : bins[i].getItems()) {
-                std::cout << std::fixed << std::setprecision(2) << binItem << " ";
-            }
-            std::cout << std::endl;
-        }
+// for (size_t i = 0; i < bins.size(); ++i) {
+//             std::cout << "\tBin " << i << ": ";
+//             for (double binItem : bins[i].getItems()) {
+//                 std::cout << std::fixed << std::setprecision(2) << binItem << " ";
+//             }
+//             std::cout << std::endl;
+//         }
     
     return bins.size();
 }
