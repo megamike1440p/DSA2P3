@@ -1,37 +1,54 @@
 #include "BruteForce.h"
 #include <algorithm> // for std::next_permutation
+#include <iostream>  // for std::cout
+#include <iomanip>   // for std::setprecision
 
 int BruteForce::packItems(std::vector<double> items) {
     // Sort the items in ascending order to generate permutations correctly
     std::sort(items.begin(), items.end());
     int minBins = items.size(); // Initialize with the maximum possible number of bins
+    std::vector<std::vector<double>> bestConfiguration;
 
     do {
-        // Evaluate the current permutation
-        minBins = std::min(minBins, packPermutation(items));
+        std::vector<Bin> currentBins;
+        int currentBinCount = packPermutation(items, currentBins);
+        if (currentBinCount < minBins) {
+            minBins = currentBinCount;
+            bestConfiguration.clear();
+            for (const Bin& bin : currentBins) {
+                bestConfiguration.push_back(bin.getItems());
+            }
+        }
     } while (std::next_permutation(items.begin(), items.end()));
+
+    // Print the best bin configuration
+    for (size_t i = 0; i < bestConfiguration.size(); ++i) {
+        std::cout << "\tBrute Force Bin " << i << ": ";
+        for (double item : bestConfiguration[i]) {
+            std::cout << std::fixed << std::setprecision(2) << item << " ";
+        }
+        std::cout << std::endl;
+    }
 
     return minBins;
 }
 
-int BruteForce::packPermutation(std::vector<double>& items) {
-    std::vector<double> bins;
+int BruteForce::packPermutation(const std::vector<double>& items, std::vector<Bin>& bins) {
     for (double item : items) {
         bool placed = false;
-        for (double &bin : bins) {
-            if (bin + item <= 1.0) {
-                // Place the item in the bin
-                bin += item;
+        for (Bin& bin : bins) {
+            if (bin.addItem(item)) {
                 placed = true;
                 break;
             }
         }
         if (!placed) {
-            // If the item was not placed in any bin, create a new bin
-            bins.push_back(item);
+            Bin newBin;
+            newBin.addItem(item);
+            bins.push_back(newBin);
         }
     }
-        for (size_t i = 0; i < bins.size(); ++i) {
+for (size_t i = 0; i < bins.size(); ++i) {
             std::cout << "\tBin " << i << ": ";
             for (double binItem : bins[i].getItems()) {
                 std::cout << std::fixed << std::setprecision(2) << binItem << " ";
