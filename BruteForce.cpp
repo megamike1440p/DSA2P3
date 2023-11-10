@@ -22,7 +22,7 @@ int BruteForce::packItems(std::vector<double> items) {
 
     for (size_t i = 0; i < bestConfiguration.size(); ++i) {
             std::cout << "\tBin " << i << ": ";
-            for (double binItem : bestConfiguration[i].getItems()) {
+            for (double binItem : bestConfiguration[i]) {
                 std::cout << std::fixed << std::setprecision(2) << binItem << " ";
             }
             std::cout << std::endl;
