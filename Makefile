@@ -3,10 +3,10 @@ CXXFLAGS = -std=c++11 -g -Wall -Wextra
 
 all: Main
 
-main: Main.o FileReader.o Bin.o BruteForce.o FirstFit.o NextFit.o BestFit.o
+Main: Main.o FileReader.o Bin.o BruteForce.o FirstFit.o NextFit.o BestFit.o
 	$(CXX) $(CXXFLAGS) -o Main Main.o FileReader.o Bin.o BruteForce.o FirstFit.o NextFit.o BestFit.o
 
-main.o: Main.cpp
+Main.o: Main.cpp
 	$(CXX) $(CXXFLAGS) -c Main.cpp
 
 FileReader.o: FileReader.cpp FileReader.h
