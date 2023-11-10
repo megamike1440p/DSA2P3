@@ -13,6 +13,12 @@ int main() {
     // Sort items for offline algorithms
     std::vector<double> sortedItems(items);
     std::sort(sortedItems.begin(), sortedItems.end(), std::greater<double>());
+    std::cout << "Sorted items: ";
+    for (double item : sortedItems) {
+        std::cout << std::fixed << std::setprecision(2) << item << " ";
+    }
+    std::cout << std::endl;
+    
 
     // Instantiate algorithms
     BruteForce bruteForce;
