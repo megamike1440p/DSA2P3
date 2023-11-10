@@ -1,3 +1,11 @@
+#include "FileReader.h"
+#include "BruteForce.h"
+#include "FirstFit.h"
+#include "NextFit.h"
+#include "BestFit.h"
+#include <iostream>
+#include <algorithm>
+
 int main() {
     FileReader fileReader;
     std::vector<double> items = fileReader.readItems("items.txt");
