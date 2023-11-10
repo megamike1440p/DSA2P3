@@ -3,6 +3,8 @@
 
 #include <vector>
 #include "Bin.h"
+#include <iostream>
+#include <iomanip>
 
 class BruteForce {
 public:
