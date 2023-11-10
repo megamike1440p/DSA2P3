@@ -14,13 +14,6 @@ int main() {
     std::vector<double> sortedItems(items);
     std::sort(sortedItems.begin(), sortedItems.end(), std::greater<double>());
 
-    // Print out the sorted items
-    std::cout << "Sorted items: ";
-    for (double item : sortedItems) {
-        std::cout << item << " ";
-    }
-    std::cout << std::endl;
-
     // Instantiate algorithms
     BruteForce bruteForce;
     FirstFit firstFit;
@@ -36,11 +29,6 @@ int main() {
     // Execute algorithms using the sorted list for offline algorithms
     int offlineFirstFitBins = firstFit.packItems(sortedItems);
     // Before calling the Best Fit algorithm
-std::cout << "Items being passed to Offline Best Fit: ";
-for (const auto& item : sortedItems) {
-    std::cout << item << " ";
-}
-std::cout << std::endl;
     int offlineBestFitBins = bestFit.packItems(sortedItems); // Correct list for offline
 
     // Output results
