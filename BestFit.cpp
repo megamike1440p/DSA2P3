@@ -30,6 +30,8 @@ int BestFit::packItems(const std::vector<double>& items) {
             newBin.addItem(item);
             bins.push_back(newBin);
         }
+    }
+
 
         for (size_t i = 0; i < bins.size(); ++i) {
             std::cout << "Bin " << i << ": ";
@@ -38,7 +40,7 @@ int BestFit::packItems(const std::vector<double>& items) {
             }
             std::cout << std::endl;
         }
-    }
 
+    
     return bins.size();
 }
