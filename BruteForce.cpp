@@ -31,5 +31,13 @@ int BruteForce::packPermutation(std::vector<double>& items) {
             bins.push_back(item);
         }
     }
+        for (size_t i = 0; i < bins.size(); ++i) {
+            std::cout << "\tBin " << i << ": ";
+            for (double binItem : bins[i].getItems()) {
+                std::cout << std::fixed << std::setprecision(2) << binItem << " ";
+            }
+            std::cout << std::endl;
+        }
+    
     return bins.size();
 }
