@@ -43,6 +43,14 @@ int BestFit::packItems(const std::vector<double>& items) {
             std::cout << std::endl;
         }
     }
+    std::cout << "Final state of bins after all items placed:" << std::endl;
+    for (size_t i = 0; i < bins.size(); ++i) {
+        std::cout << "Bin " << i << " (Current Size: " << bins[i].getCurrentSize() << ") contains: ";
+        for (double binItem : bins[i].getItems()) {
+            std::cout << binItem << " ";
+        }
+        std::cout << std::endl;
+    }
 
     // Return the number of bins used
     return bins.size();
