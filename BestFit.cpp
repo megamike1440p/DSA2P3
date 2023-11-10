@@ -2,6 +2,11 @@
 #include <iostream> // For debug output
 
 int BestFit::packItems(const std::vector<double>& items) {
+     std::cout << "BestFit::packItems received items: ";
+    for (double item : items) {
+        std::cout << item << " ";
+    }
+    std::cout << std::endl;
     std::vector<Bin> bins;
 
     for (double item : items) {
