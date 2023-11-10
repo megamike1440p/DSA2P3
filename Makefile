@@ -1,13 +1,13 @@
 CXX = g++
 CXXFLAGS = -std=c++11 -g -Wall -Wextra
 
-all: Main
+all: main
 
-Main: Main.o FileReader.o Bin.o BruteForce.o FirstFit.o NextFit.o BestFit.o
-	$(CXX) $(CXXFLAGS) -o Main Main.o FileReader.o Bin.o BruteForce.o FirstFit.o NextFit.o BestFit.o
+main: main.o FileReader.o Bin.o BruteForce.o FirstFit.o NextFit.o BestFit.o
+	$(CXX) $(CXXFLAGS) -o main main.o FileReader.o Bin.o BruteForce.o FirstFit.o NextFit.o BestFit.o
 
-Main.o: Main.cpp
-	$(CXX) $(CXXFLAGS) -c Main.cpp
+main.o: main.cpp
+	$(CXX) $(CXXFLAGS) -c main.cpp
 
 FileReader.o: FileReader.cpp FileReader.h
 	$(CXX) $(CXXFLAGS) -c FileReader.cpp
@@ -28,4 +28,4 @@ BestFit.o: BestFit.cpp BestFit.h
 	$(CXX) $(CXXFLAGS) -c BestFit.cpp
 
 clean:
-	rm -f *.o Main
+	rm -f *.o main
